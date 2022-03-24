@@ -1,10 +1,12 @@
 import React from "react"
-import "./Card.css"
+import "./MovieCard.css"
 
-const Card = () => {
+const MovieCard = ({id, posterPath}) => {
   return(
-    <h1>This is a footer</h1>
+    <div>
+      <h1>poster goes here</h1>
+    </div>
 
   )
 }
-export default Footer
+export default MovieCard

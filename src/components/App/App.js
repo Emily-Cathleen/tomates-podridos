@@ -2,7 +2,8 @@ import React, {Component} from "react"
 import './App.css';
 import Header from "../Header/Header"
 import Footer from "../Footer/Footer"
-import Movies from "../Movies/Movies"
+import AllMovies from "../Movies/AllMovies"
+import movieData from "../../movie-data";
 
 class App extends Component {
   constructor() {
@@ -13,14 +14,14 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.setState()
+    this.setState({ movies: movieData.movies })
   }
 
   render() {
     return(
       <main>
         <Header />
-        <Movies />
+        <AllMovies movies={this.state.movies} />
         <Footer />
       </main>
     )

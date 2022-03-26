@@ -1,5 +1,7 @@
 header {
   position: sticky; top: 0;
+  background-color: black;
+  color: white;
   height: 10vh;
   border: 2px solid orange;
 }

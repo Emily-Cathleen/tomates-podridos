@@ -4,7 +4,7 @@ import Header from "../Header/Header"
 import Footer from "../Footer/Footer"
 import AllMovies from "../AllMovies/AllMovies"
 import MovieModal from "../MovieModal/MovieModal"
-import {movieData} from "../../movie-data";
+import {allMoviesData, singleMovieData} from "../../apiCalls"
 
 class App extends Component {
   constructor() {
@@ -13,11 +13,13 @@ class App extends Component {
       movies: [],
       selectedMovie: "",
       isClicked: false,
+      error: ''
     }
   }
 
   componentDidMount() {
-    this.setState({ movies: movieData.movies })
+    return allMoviesData().then(data => this.setState({ movies: data.movies }))
+    .catch(error => this.setState("ERROR"))
   }
 
   clickedMovie = (id) => {
@@ -27,7 +29,6 @@ class App extends Component {
     })
     this.setState({selectedMovie: findSelectedMovie, isClicked: true})
   }
-
 
 
   render() {

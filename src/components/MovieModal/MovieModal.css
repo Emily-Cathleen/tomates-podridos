@@ -1,7 +1,12 @@
+.movie-modal {
+  display: flex;
+}
+
 .movie-details {
   border: 2px solid green
 }
 
 .movie-trailer {
+  /* display: flex; */
   border: 2px solid blue
 }

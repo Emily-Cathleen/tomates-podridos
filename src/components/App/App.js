@@ -34,7 +34,7 @@ class App extends Component {
     return(
       <main>
         <Header />
-        <AllMovies movies={this.state.movies} clickedMovie={this.clickedMovie} />
+        {!this.state.isClicked && <AllMovies movies={this.state.movies} clickedMovie={this.clickedMovie} />}
         {this.state.isClicked && <MovieModal movie={this.state.selectedMovie} />}
         <Footer />
       </main>

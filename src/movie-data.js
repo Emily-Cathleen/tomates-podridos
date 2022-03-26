@@ -1,6 +1,6 @@
-const movieData = {
-  "movies": [
-    {
+export const movieData = {
+
+  "movies": [{
       "id": 694919,
       "poster_path": "https://image.tmdb.org/t/p/original//6CoRTJTmijhBLJTUNoVSUNxZMEI.jpg",
       "backdrop_path": "https://image.tmdb.org/t/p/original//pq0JSpwyT2URytdFG0euztQPAyR.jpg",
@@ -323,4 +323,4 @@ const movieData = {
   ]
 };
 
-export default movieData;
+// export default movieData;

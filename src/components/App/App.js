@@ -26,7 +26,6 @@ class App extends Component {
     const findSelectedMovie = this.state.movies.find(movie => {
       return movie.id === id;
     })
-
     //findSelectedMovie is returning the entire object
     // console.log(id)
     singleMovieData(findSelectedMovie.id).then(data =>
@@ -35,13 +34,16 @@ class App extends Component {
       })
   }
 
+  backButton = () => {
+    this.setState({isClicked: false})
+  }
 
   render() {
     return(
       <main>
         <Header />
         {!this.state.isClicked && <AllMovies movies={this.state.movies} clickedMovie={this.clickedMovie} />}
-        {this.state.isClicked && <MovieModal selectedMovie={this.state.selectedMovie} />}
+        {this.state.isClicked && <MovieModal selectedMovie={this.state.selectedMovie} backButton={this.backButton} />}
         <Footer />
       </main>
     )

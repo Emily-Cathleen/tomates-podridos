@@ -8,7 +8,12 @@ const MovieModal = ({ selectedMovie }) => {
       </div>
       <section className="movie-details">
         <h1>{selectedMovie.title}</h1>
-        <img src={selectedMovie.image} alt={selectedMovie.title}/>
+        <p>{selectedMovie.release_date}</p>
+        <p>{selectedMovie.overview}</p>
+        <p>{selectedMovie.genres}</p>
+        <p>{selectedMovie.runtime}</p>
+        <p>{selectedMovie.average_rating}</p>
+        <img src={selectedMovie.poster_path} alt={selectedMovie.title}/>
       </section>
     </div>
   )

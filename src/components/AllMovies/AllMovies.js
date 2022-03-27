@@ -2,7 +2,7 @@ import React from "react";
 import MovieCard from "../MovieCard/MovieCard";
 import "./AllMovies.css";
 
-const AllMovies = ({ movies }) => {
+const AllMovies = ({ movies, clickedMovie }) => {
   const movieCards = movies.map((movie) => {
     return (
       <MovieCard
@@ -10,6 +10,7 @@ const AllMovies = ({ movies }) => {
         key={movie.id}
         image={movie.poster_path}
         title={movie.title}
+        clickedMovie={clickedMovie}
       />
     );
   });

@@ -3,10 +3,19 @@
 }
 
 .movie-details {
-  border: 2px solid green
+  border: 2px solid green;
+  padding: 20px;
 }
 
+.modal-img {
+  max-width: 12vw;
+}
 .movie-trailer {
   /* display: flex; */
+  width: 70vw;
   border: 2px solid blue
+}
+
+.movie-description {
+  padding: 20px 0px 20px 0px;
 }

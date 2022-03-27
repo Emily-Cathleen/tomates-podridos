@@ -11,23 +11,28 @@ class App extends Component {
     super();
     this.state = {
       movies: [],
-      selectedMovie: "",
+      selectedMovie: {},
       isClicked: false,
       error: ''
     }
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
     return allMoviesData().then(data => this.setState({ movies: data.movies }))
     .catch(error => this.setState("ERROR"))
   }
 
   clickedMovie = (id) => {
-    console.log("CLICK")
     const findSelectedMovie = this.state.movies.find(movie => {
       return movie.id === id;
     })
-    this.setState({selectedMovie: findSelectedMovie, isClicked: true})
+
+    //findSelectedMovie is returning the entire object
+    // console.log(id)
+    singleMovieData(findSelectedMovie.id).then(data =>
+      {this.setState({selectedMovie: data.movie})
+      this.setState({isClicked: true})
+      })
   }
 
 
@@ -36,7 +41,7 @@ class App extends Component {
       <main>
         <Header />
         {!this.state.isClicked && <AllMovies movies={this.state.movies} clickedMovie={this.clickedMovie} />}
-        {this.state.isClicked && <MovieModal movie={this.state.selectedMovie} />}
+        {this.state.isClicked && <MovieModal selectedMovie={this.state.selectedMovie} />}
         <Footer />
       </main>
     )

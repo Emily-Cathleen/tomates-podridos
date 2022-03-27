@@ -1,13 +1,21 @@
 import React from "react";
-import "./ErrorModal.css"
+import "./ErrorModal.css";
 
-const ErrorModal = ({error, closeModal}) => {
-  <div className="error-modal" tabindex="0" class="modal">
+const ErrorModal = ({ error, closeModalButton }) => {
+  return(
+    <div className="error-modal" tabIndex="0">
       <div className="modal-content" role="dialog" aria-modal="true">
-        <p id="errorMessage">
-          {error}
-        </p>
-        <button className="close button-62" role="button" name="close dialog">&times;</button>
+        <p id="errorMessage">{error}</p>
+        <button
+          onClick={() => closeModalButton()}
+          className="close-button"
+          name="close dialog"
+        >
+          &times;
+        </button>
       </div>
     </div>
-}
+  )
+};
+
+export default ErrorModal

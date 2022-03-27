@@ -1,19 +1,14 @@
 import React from "react"
 import "./MovieModal.css"
 
-const MovieModal = (id, image, backdrop, title, descrription, rating, budget, runTime, tagLine, releaseDate) => {
+const MovieModal = ({ selectedMovie }) => {
   return (
     <div className="movie-modal">
       <div className="movie-trailer">
       </div>
       <section className="movie-details">
-        <h1>Title</h1>
-        <p>Description</p>
-        <p>Rating</p>
-        <p>Release Date</p>
-        <p>Run Time</p>
-        <p>Budget</p>
-        <img src={image} alt={title}/>
+        <h1>{selectedMovie.title}</h1>
+        <img src={selectedMovie.image} alt={selectedMovie.title}/>
       </section>
     </div>
   )

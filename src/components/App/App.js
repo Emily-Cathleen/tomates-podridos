@@ -4,6 +4,7 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import AllMovies from "../AllMovies/AllMovies";
 import MovieModal from "../MovieModal/MovieModal";
+import ErrorModal from "../ErrorModal/ErrorModal"
 import { allMoviesData, singleMovieData } from "../../apiCalls";
 
 class App extends Component {
@@ -25,7 +26,7 @@ class App extends Component {
   };
 
   throwError = (error) => {
-    this.setState({error: error})
+    this.setState({ error: error})
     this.setState({ hasError: true });
 
   }
@@ -34,18 +35,20 @@ class App extends Component {
     const findSelectedMovie = this.state.movies.find((movie) => {
       return movie.id === id;
     });
-    singleMovieData(findSelectedMovie.id).then((data) => {
+    singleMovieData(findSelectedMovie.id)
+    .then((data) => {
       this.setState({ selectedMovie: data.movie });
       this.setState({ isClicked: true });
-    });
+    })
+    .catch((error) => this.throwError("Oops! something went wrong. Please try again. If problem persists, send complaints to Robbie and Scott"));
   };
 
   backButton = () => {
     this.setState({ isClicked: false });
   };
 
-  backButton = () => {
-    this.setState({ isClicked: false });
+  closeModalButton = () => {
+    this.setState({ hasError: false });
   };
 
   render() {
@@ -59,10 +62,10 @@ class App extends Component {
           />
         )}
         {this.state.hasError && (
-          <ErrorModal 
-            error={this.state.error}
-          />
-        )}
+        <ErrorModal 
+          error={this.state.error}
+          closeModalButton={this.closeModalButton}
+        />)}
         {this.state.isClicked && (
           <MovieModal
             selectedMovie={this.state.selectedMovie}

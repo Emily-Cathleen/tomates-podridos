@@ -1,10 +1,11 @@
 import React from "react"
 import "./Header.css"
+import headerLogo from "../../images/tomates-podridos-logo.png"
 
 const Header = () => {
   return(
     <header>
-      <h1>Tomates Podridos</h1>
+      <img className="header-logo" src={headerLogo} alt="Home button tomates podridos logo" />
     </header>
 
   )

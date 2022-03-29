@@ -6,6 +6,7 @@ import AllMovies from "../AllMovies/AllMovies";
 import MovieModal from "../MovieModal/MovieModal";
 import ErrorModal from "../ErrorModal/ErrorModal"
 import { allMoviesData, singleMovieData } from "../../apiCalls";
+import { Route } from 'react-router-dom';
 
 class App extends Component {
   constructor() {

@@ -7,6 +7,13 @@ describe('Tomates podridos main page', () => {
     cy.visit('http://localhost:3000').contains('©2022 Tomates Podritos | A fake movie site by Emily C and Eric M')
   });
 
-
+  it("Should display error message for 400 status code", () => {
+    cy.intercept("https://rancid-tomatillos.herokuapp.com/api/v2/movies", {
+      statusCode: 404,
+  });
+  cy.visit('http://localhost:3000/').contains(
+    "Oops! something went wrong. Please try again. If problem persists, send complaints to Robbie and Scott"
+  );
+});
 
 });

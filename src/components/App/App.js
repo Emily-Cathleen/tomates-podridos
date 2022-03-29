@@ -6,7 +6,7 @@ import AllMovies from "../AllMovies/AllMovies";
 import MovieModal from "../MovieModal/MovieModal";
 import ErrorModal from "../ErrorModal/ErrorModal"
 import { allMoviesData, singleMovieData } from "../../apiCalls";
-import { Route } from 'react-router-dom';
+import { Route, NavLink, Switch } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
@@ -56,12 +56,11 @@ class App extends Component {
     return (
       <main>
         <Header />
-        {!this.state.isClicked && (
-          <AllMovies
-            movies={this.state.movies}
-            clickedMovie={this.clickedMovie}
-          />
-        )}
+          <Switch>
+            <Route exact path="/" render={() =>
+            <AllMovies movies={this.state.movies} clickedMovie={this.clickedMovie}/> }
+            />
+          </Switch>
         {this.state.hasError && (
         <ErrorModal
           error={this.state.error}

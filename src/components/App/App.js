@@ -6,6 +6,7 @@ import AllMovies from "../AllMovies/AllMovies";
 import MovieModal from "../MovieModal/MovieModal";
 import ErrorModal from "../ErrorModal/ErrorModal"
 import { allMoviesData, singleMovieData } from "../../apiCalls";
+// import { } from "react-router-dom";
 
 class App extends Component {
   constructor() {
@@ -62,7 +63,7 @@ class App extends Component {
           />
         )}
         {this.state.hasError && (
-        <ErrorModal 
+        <ErrorModal
           error={this.state.error}
           closeModalButton={this.closeModalButton}
         />)}

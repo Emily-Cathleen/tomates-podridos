@@ -1,7 +1,13 @@
 header {
   position: sticky; top: 0;
-  background-color: black;
+  background-color: rgb(14 0 33 / 95%);
   color: white;
-  height: 10vh;
-  border: 2px solid orange;
+  height: 12vh;
+  z-index: 2;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.666);
+}
+
+.header-logo {
+  height: 100%;
+  padding: 15px;
 }

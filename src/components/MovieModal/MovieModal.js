@@ -1,5 +1,6 @@
 import React from "react"
 import "./MovieModal.css"
+import { Link } from 'react-router-dom';
 
 const MovieModal = ({ selectedMovie, backButton }) => {
   return (
@@ -16,7 +17,9 @@ const MovieModal = ({ selectedMovie, backButton }) => {
         <p>{selectedMovie.average_rating}</p>
         </section>
         <div>
-        <button onClick={() => backButton()}>BACK</button>
+        <Link to="/">
+          <button onClick={() => backButton()}>BACK</button>
+        </Link>
         </div>
     </div>
   )

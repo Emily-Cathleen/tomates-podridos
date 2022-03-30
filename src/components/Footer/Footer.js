@@ -4,7 +4,7 @@ import "./Footer.css"
 const Footer = () => {
   return(
     <footer>
-      <h1>This is a footer</h1>
+      <p>©2022 Tomates Podritos | A fake movie site by Emily C and Eric M</p>
     </footer>
 
   )

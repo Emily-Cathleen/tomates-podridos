@@ -1,8 +1,8 @@
 import React from "react"
-import "./MovieModal.css"
+import "./SingleMovie.css"
 import { Link } from 'react-router-dom';
 
-const MovieModal = ({ selectedMovie, backButton }) => {
+const SingleMovie = ({ selectedMovie, backButton }) => {
   return (
     <div className="movie-modal">
       <div className="movie-trailer">
@@ -27,4 +27,4 @@ const MovieModal = ({ selectedMovie, backButton }) => {
 
 
 
-export default MovieModal
+export default SingleMovie

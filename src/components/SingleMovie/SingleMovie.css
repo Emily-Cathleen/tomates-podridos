@@ -1,5 +1,6 @@
 .movie-modal {
   display: flex;
+  height: 100%;
 }
 
 .movie-details {

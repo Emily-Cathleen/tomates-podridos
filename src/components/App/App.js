@@ -60,18 +60,18 @@ class App extends Component {
             <Route exact path="/" render={() =>
             <AllMovies movies={this.state.movies} clickedMovie={this.clickedMovie}/> }
             />
+
+            <Route path="/:id" render={() =>
+              <MovieModal selectedMovie={this.state.selectedMovie} backButton={this.backButton}/> }
+            />
+
           </Switch>
         {this.state.hasError && (
         <ErrorModal
           error={this.state.error}
           closeModalButton={this.closeModalButton}
         />)}
-        {this.state.isClicked && (
-          <MovieModal
-            selectedMovie={this.state.selectedMovie}
-            backButton={this.backButton}
-          />
-        )}
+
         <Footer />
       </main>
     );

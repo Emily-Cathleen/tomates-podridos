@@ -3,7 +3,7 @@ import "./App.css";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import AllMovies from "../AllMovies/AllMovies";
-import MovieModal from "../MovieModal/MovieModal";
+import SingleMovie from "../SingleMovie/SingleMovie";
 import ErrorModal from "../ErrorModal/ErrorModal"
 import { allMoviesData, singleMovieData } from "../../apiCalls";
 import { Route, NavLink, Switch } from 'react-router-dom';
@@ -62,7 +62,7 @@ class App extends Component {
             />
 
             <Route path="/:id" render={() =>
-              <MovieModal selectedMovie={this.state.selectedMovie} backButton={this.backButton}/> }
+              <SingleMovie selectedMovie={this.state.selectedMovie} backButton={this.backButton}/> }
             />
 
           </Switch>

@@ -1,6 +1,8 @@
 import React from "react";
 import "./SingleMovie.css";
 import { Link } from "react-router-dom";
+import TomateMeter from "../TomateMeter/TomateMeter"
+
 
 const SingleMovie = ({ selectedMovie, backButton }) => {
   return (
@@ -15,9 +17,9 @@ const SingleMovie = ({ selectedMovie, backButton }) => {
           height="100%"
           src="https://www.youtube.com/embed/aETz_dRDEys"
           title="YouTube video player"
-          frameborder="0"
+          frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen="allowfullscreen"
+          allowFullScreen="allowfullscreen"
         ></iframe>
       </div>
       <section className="movie-details">
@@ -27,9 +29,10 @@ const SingleMovie = ({ selectedMovie, backButton }) => {
         <p>{selectedMovie.genres}</p>
         <p>{selectedMovie.runtime} minutes</p>
         <p>{selectedMovie.average_rating}</p>
+        <TomateMeter rating={selectedMovie.average_rating}  />
         <div className="button-box">
           <Link to="/">
-            <button onClick={() => backButton()}>BACK</button>
+            <button>BACK</button>
           </Link>
         </div>
       </section>

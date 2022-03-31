@@ -4,7 +4,9 @@ import "./Footer.css"
 const Footer = () => {
   return(
     <footer>
-      <p>©2022 Tomates Podritos | A fake movie site by Emily C and Eric M</p>
+      <p className="footer-text">©2022 Tomates Podritos</p>
+      <p className="footer-text">|</p>
+      <p className="footer-text">A fake movie site by Emily C and Eric M</p>
     </footer>
 
   )

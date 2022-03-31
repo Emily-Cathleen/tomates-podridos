@@ -7,7 +7,7 @@ import cool from "../../images/tomate-cool.png"
 import wow from "../../images/tomate-wow.png"
 
 const TomateMeter = ({rating}) => {
-  const roundRating = rating.toFixed(2)
+  // const roundRating = rating.toFixed(2)
   // const tomate = (rating) => { 
   //   if (rating <= 3) {
   //     return rot
@@ -28,7 +28,7 @@ const TomateMeter = ({rating}) => {
   
   return(
     <div>
-      <h3>{roundRating}</h3>
+      {/* <h3>{roundRating}</h3> */}
       <img className="rating-img" src={cool} alt="cartoon tomato" />
     </div>
   )

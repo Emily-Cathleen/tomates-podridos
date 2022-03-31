@@ -20,6 +20,7 @@ describe('Tomates podridos main page', () => {
   );
 });
 
+//SEARCH BAR
 // it("Should contain a search bar", () => {
 //   cy.get('form input[placeholder="Search title here"]')
 //     get('form input[type="text"]')

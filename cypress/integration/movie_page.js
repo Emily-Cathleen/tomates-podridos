@@ -3,6 +3,10 @@ describe('Tomates podridos main page', () => {
     cy.visit('http://localhost:3000')
   });
 
+  it("Should have a header with Tomates Podriodos on it", () => {
+    cy.visit('http://localhost:3000').contains("Tomates Podridos")
+  });
+
   it("Should have a footer with Company name", () => {
     cy.visit('http://localhost:3000').contains('©2022 Tomates Podritos | A fake movie site by Emily C and Eric M')
   });

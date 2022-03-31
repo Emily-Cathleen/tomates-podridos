@@ -11,4 +11,10 @@ describe('Tomates podridos main page', () => {
     cy.visit('http://localhost:3000').contains('©2022 Tomates Podritos | A fake movie site by Emily C and Eric M')
   });
 
+  // it("Should display a button to return the user to home page", () => {
+  //   cy.get(".x-button")
+  //   .click()
+  //   .url().should("eq", "http://localhost:3000/movie.id")
+  // })
+
   });

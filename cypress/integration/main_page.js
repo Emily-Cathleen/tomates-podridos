@@ -3,14 +3,23 @@ describe('Tomates podridos main page', () => {
     cy.visit('http://localhost:3000')
   });
 
+  //HEADER
   it("Should have a header with Tomates Podriodos on it", () => {
-    cy.visit('http://localhost:3000').contains("Tomates Podridos")
+  cy.get('[alt="Home button tomates podridos logo"]')
+  .should('be.visible')
+  .and(($img) => {
+    expect($img[0].naturalWidth).to.be.greaterThan(0)
   });
+});
 
+
+//FOOTER
   it("Should have a footer with Company name", () => {
-    cy.visit('http://localhost:3000').contains('©2022 Tomates Podritos | A fake movie site by Emily C and Eric M')
+    cy.visit('http://localhost:3000').contains('©2022 Tomates Podritos')
   });
 
+
+//ERROR MSG
   it("Should display error message for 400 status code", () => {
     cy.intercept("https://rancid-tomatillos.herokuapp.com/api/v2/movies", {
       statusCode: 404,

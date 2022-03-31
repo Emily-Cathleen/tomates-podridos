@@ -1,0 +1,37 @@
+.single-movie {
+  display: flex;
+  height: 80vh;
+  width: 100vw;
+  background-size: cover;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.movie-details {
+  display: flex;
+  flex-direction: column;
+  height: 76%;
+  width: 30%;
+  padding: 4%;
+  background-color: rgba(14, 0, 33, 0.848);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  color: white;
+  justify-content: space-between;
+}
+
+.movie-trailer {
+  border: 2px solid black;
+  display: flex;
+  width: 60%;
+  height: 76%;
+}
+
+.button-box {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.movie-description {
+  padding: 20px 0px 20px 0px;
+}

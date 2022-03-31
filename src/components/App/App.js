@@ -3,10 +3,10 @@ import "./App.css";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import AllMovies from "../AllMovies/AllMovies";
-import MovieModal from "../MovieModal/MovieModal";
+import SingleMovie from "../SingleMovie/SingleMovie";
 import ErrorModal from "../ErrorModal/ErrorModal"
-import { allMoviesData, singleMovieData } from "../../apiCalls";
-import { Route, NavLink, Switch } from 'react-router-dom';
+import { getData, singleMovieData } from "../../apiCalls";
+import { Route, Switch } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
@@ -14,14 +14,14 @@ class App extends Component {
     this.state = {
       movies: [],
       selectedMovie: {},
-      isClicked: false,
+      // isClicked: false,
       error: "",
       hasError: false
     };
   }
 
   componentDidMount = () => {
-    return allMoviesData()
+    return getData("")
       .then((data) => this.setState({ movies: data.movies }))
       .catch((error) => this.throwError("Oops! something went wrong. Please try again. If problem persists, send complaints to Robbie and Scott"));
   };
@@ -39,14 +39,14 @@ class App extends Component {
     singleMovieData(findSelectedMovie.id)
     .then((data) => {
       this.setState({ selectedMovie: data.movie });
-      this.setState({ isClicked: true });
+      // this.setState({ isClicked: true });
     })
     .catch((error) => this.throwError("Oops! something went wrong. Please try again. If problem persists, send complaints to Robbie and Scott"));
   };
 
-  backButton = () => {
-    this.setState({ isClicked: false });
-  };
+  // backButton = () => {
+  //   this.setState({ isClicked: false });
+  // };
 
   closeModalButton = () => {
     this.setState({ hasError: false });
@@ -57,12 +57,13 @@ class App extends Component {
       <main>
         <Header />
           <Switch>
+          {/* HomePage */}
             <Route exact path="/" render={() =>
             <AllMovies movies={this.state.movies} clickedMovie={this.clickedMovie}/> }
             />
-
+          {/* SingleMoviePage */}
             <Route path="/:id" render={() =>
-              <MovieModal selectedMovie={this.state.selectedMovie} backButton={this.backButton}/> }
+              <SingleMovie selectedMovie={this.state.selectedMovie} backButton={this.backButton}/> }
             />
 
           </Switch>

@@ -21,8 +21,8 @@ class App extends Component {
     };
   }
 
-  componentDidMount = () => {
-    return getData("")
+  componentDidMount() {
+     getData("")
       .then((data) => this.setState({ movies: data.movies }))
       .catch((error) => this.throwError("Oops! something went wrong. Please try again. If problem persists, send complaints to Robbie and Scott"));
   };
@@ -34,6 +34,7 @@ class App extends Component {
   }
 
   clickedMovie = (id) => {
+    console.log("thisis the id", id)
     this.setState({selectedMovieId: id});
 
 };
@@ -52,8 +53,9 @@ class App extends Component {
             <AllMovies movies={this.state.movies} clickedMovie={this.clickedMovie}/> }
             />
           {/* SingleMoviePage */}
-            <Route path="/:id" render={() =>
-              <SingleMovie id={this.state.selectedMovieId} /> }
+            <Route path="/:id" render={({match}) => {
+              return <SingleMovie id={match.params.id} /> 
+              }}
             />
 
           </Switch>

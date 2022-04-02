@@ -14,7 +14,7 @@ class App extends Component {
     this.state = {
       movies: [],
       selectedMovie: {},
-      // isClicked: false,
+      videos: {},
       error: "",
       hasError: false
     };
@@ -36,11 +36,18 @@ class App extends Component {
     const findSelectedMovie = this.state.movies.find((movie) => {
       return movie.id === id;
     });
-    singleMovieData(findSelectedMovie.id)
-    .then((data) => {
-      this.setState({ selectedMovie: data.movie });
-      // this.setState({ isClicked: true });
+    Promise.all([
+      getData(findSelectedMovie.id),
+      getData(`${findSelectedMovie.id}/videos`)
+    ]).then((data) => {
+      this.setState({selectedMovie: data[0].movie, video: data[1].videos})
     })
+
+    // singleMovieData(findSelectedMovie.id)
+    // .then((data) => {
+    //
+    //   this.setState({ selectedMovie: data.movie });
+    // })
     .catch((error) => this.throwError("Oops! something went wrong. Please try again. If problem persists, send complaints to Robbie and Scott"));
   };
 

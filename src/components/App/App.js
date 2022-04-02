@@ -13,8 +13,9 @@ class App extends Component {
     super();
     this.state = {
       movies: [],
-      selectedMovie: {},
-      videos: {},
+      selectedMovieId: null,
+      // selectedMovie: {},
+      // video: {},
       error: "",
       hasError: false
     };
@@ -33,27 +34,9 @@ class App extends Component {
   }
 
   clickedMovie = (id) => {
-    const findSelectedMovie = this.state.movies.find((movie) => {
-      return movie.id === id;
-    });
-    Promise.all([
-      getData(findSelectedMovie.id),
-      getData(`${findSelectedMovie.id}/videos`)
-    ]).then((data) => {
-      this.setState({selectedMovie: data[0].movie, video: data[1].videos})
-    })
+    this.setState({selectedMovieId: id});
 
-    // singleMovieData(findSelectedMovie.id)
-    // .then((data) => {
-    //
-    //   this.setState({ selectedMovie: data.movie });
-    // })
-    .catch((error) => this.throwError("Oops! something went wrong. Please try again. If problem persists, send complaints to Robbie and Scott"));
-  };
-
-  // backButton = () => {
-  //   this.setState({ isClicked: false });
-  // };
+};
 
   closeModalButton = () => {
     this.setState({ hasError: false });
@@ -70,7 +53,7 @@ class App extends Component {
             />
           {/* SingleMoviePage */}
             <Route path="/:id" render={() =>
-              <SingleMovie selectedMovie={this.state.selectedMovie} backButton={this.backButton}/> }
+              <SingleMovie id={this.state.selectedMovieId} /> }
             />
 
           </Switch>

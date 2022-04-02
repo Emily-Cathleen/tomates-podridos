@@ -6,36 +6,37 @@ import { getData, singleMovieData } from "../../apiCalls";
 
 
 class SingleMovie extends Component {
-  constructor({ id }) {
-    super();
+  constructor( id ) {
+    super(id);
     this.state = {
       selectedMovie: {},
       video: {}
     }
   }
 
-  componentDidMount = () => {
-    Promise.all ([
+  componentDidMount = (id) => {
+    console.log("ID", id)
+    return Promise.all ([
     getData(id),
     getData(`${id}/videos`)
     ]).then((data) => {
-    this.setState({selectedMovie: data[0].movie, video: data[1].videos})
+    this.setState({selectedMovie: data[0].movie, video: data[1].videos[0]})
   })
 
   .catch((error) => this.throwError("Oops! something went wrong. Please try again. If problem persists, send complaints to Robbie and Scott"));
   };
 
 
-  return (
+  render() {
+    return (
     <div
       className="single-movie"
-      style={{ backgroundImage: `url(${selectedMovie.backdrop_path})` }}
+      style={{ backgroundImage: `url(${this.state.selectedMovie.backdrop_path})` }}
     >
       <div className="movie-trailer">
         <iframe
           width="100%"
           height="100%"
-          src={`https://www.youtube.com/embed/${video[0].key}`}
           title="YouTube video player"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -58,6 +59,7 @@ class SingleMovie extends Component {
       </section>
     </div>
   );
+};
 };
 
 export default SingleMovie;

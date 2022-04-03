@@ -18,7 +18,7 @@ class App extends Component {
     };
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
      getData("")
       .then((data) => this.setState({ movies: data.movies }))
       .catch((error) => this.throwError("Oops! something went wrong. Please try again. If problem persists, send complaints to Robbie and Scott"));
@@ -27,8 +27,11 @@ class App extends Component {
   throwError = (error) => {
     this.setState({ error: error})
     this.setState({ hasError: true });
-
   }
+
+  closeModalButton = () => {
+    this.setState({ hasError: false });
+  };
 
   clickedMovie = (id) => {
     console.log("thisis the id", id)
@@ -36,9 +39,6 @@ class App extends Component {
 
 };
 
-  closeModalButton = () => {
-    this.setState({ hasError: false });
-  };
 
   render() {
     return (
@@ -54,6 +54,8 @@ class App extends Component {
               return <SingleMovie id={match.params.id} /> 
               }}
             />
+            {/* 404 Page */}
+            
 
           </Switch>
         {this.state.hasError && (

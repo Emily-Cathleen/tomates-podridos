@@ -1,43 +1,81 @@
-import React from "react";
+import React, { Component } from "react";
 import "./SingleMovie.css";
 import { Link } from "react-router-dom";
-import TomateMeter from "../TomateMeter/TomateMeter"
+import TomateMeter from "../TomateMeter/TomateMeter";
+import { getData } from "../../apiCalls";
 
+class SingleMovie extends Component {
+  constructor({ id }) {
+    super();
+    this.state = {
+      id: id,
+      selectedMovie: {},
+      video: {},
+    };
+  }
 
-const SingleMovie = ({ selectedMovie, backButton }) => {
-  return (
-    <div
-      className="single-movie"
-      style={{ backgroundImage: `url(${selectedMovie.backdrop_path})` }}
-    >
-      {/* <img className="movie-bg" src={selectedMovie.backdrop_path} alt={selectedMovie.title}/> */}
-      <div className="movie-trailer">
-        <iframe
-          width="100%"
-          height="100%"
-          src="https://www.youtube.com/embed/aETz_dRDEys"
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen="allowfullscreen"
-        ></iframe>
-      </div>
-      <section className="movie-details">
-        <h1>{selectedMovie.title}</h1>
-        <p>Released: {selectedMovie.release_date}</p>
-        <p className="movie-description"> {selectedMovie.overview}</p>
-        <p>{selectedMovie.genres}</p>
-        <p>{selectedMovie.runtime} minutes</p>
-        <p>{selectedMovie.average_rating}</p>
-        <TomateMeter rating={selectedMovie.average_rating}  />
-        <div className="button-box">
-          <Link to="/">
-            <button>BACK</button>
-          </Link>
+  componentDidMount() {
+    getData(this.state.id)
+      .then((data) => {
+        console.log("this is the data", data);
+        this.setState({ selectedMovie: data.movie });
+      })
+      .catch((error) =>
+        this.throwError(
+          "Oops! something went wrong. Please try again. If problem persists, send complaints to Robbie and Scott"
+        )
+      );
+    getData(`${this.state.id}/videos`)
+      .then((data) => {
+        console.log("this is the video data", data);
+        this.setState({ video: data.videos[0] });
+      })
+      .catch((error) =>
+        this.throwError(
+          "Oops! something went wrong. Please try again. If problem persists, send complaints to Robbie and Scott"
+        )
+      );
+  }
+
+  render() {
+    return (
+      <div
+        className="single-movie"
+        style={{
+          backgroundImage: `url(${this.state.selectedMovie.backdrop_path})`,
+        }}
+      >
+        <div className="movie-trailer">
+          <iframe
+            width="100%"
+            height="100%"
+            src={`https://www.youtube.com/embed/${this.state.video.key}`}
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen="allowfullscreen"
+          ></iframe>
         </div>
-      </section>
-    </div>
-  );
-};
+        <section className="movie-details">
+          <h1>{this.state.selectedMovie.title}</h1>
+          <p>Released: {this.state.selectedMovie.release_date}</p>
+          <p className="movie-description">
+            {" "}
+            {this.state.selectedMovie.overview}
+          </p>
+          <p>{this.state.selectedMovie.genres}</p>
+          <p>{this.state.selectedMovie.runtime} minutes</p>
+          <p>{this.state.selectedMovie.average_rating}</p>
+          <TomateMeter rating={this.state.selectedMovie.average_rating} />
+          <div className="button-box">
+            <Link to="/">
+              <button>BACK</button>
+            </Link>
+          </div>
+        </section>
+      </div>
+    );
+  }
+}
 
 export default SingleMovie;

@@ -5,7 +5,7 @@ import Footer from "../Footer/Footer";
 import AllMovies from "../AllMovies/AllMovies";
 import SingleMovie from "../SingleMovie/SingleMovie";
 import ErrorModal from "../ErrorModal/ErrorModal"
-import { getData, singleMovieData } from "../../apiCalls";
+import { getData } from "../../apiCalls";
 import { Route, Switch } from 'react-router-dom';
 
 class App extends Component {
@@ -13,9 +13,6 @@ class App extends Component {
     super();
     this.state = {
       movies: [],
-      selectedMovieId: null,
-      // selectedMovie: {},
-      // video: {},
       error: "",
       hasError: false
     };

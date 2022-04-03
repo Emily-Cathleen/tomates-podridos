@@ -3,9 +3,10 @@ import "./SingleMovie.css";
 import { Link } from "react-router-dom";
 import TomateMeter from "../TomateMeter/TomateMeter";
 import { getData } from "../../apiCalls";
+import ErrorModal from "../ErrorModal/ErrorModal";
 
 class SingleMovie extends Component {
-  constructor({ id, actionName }) {
+  constructor({ id }) {
     super();
     this.state = {
       id: id,
@@ -16,7 +17,7 @@ class SingleMovie extends Component {
     };
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
     getData(this.state.id)
       .then((data) => this.cleanMovieData(data))
       .then((data) => this.setState({ selectedMovie: data.movie }))
@@ -34,7 +35,7 @@ class SingleMovie extends Component {
           "Oops! something went wrong. Please try again. If problem persists, send complaints to Robbie and Scott"
         )
       );
-  }
+  };
 
   cleanMovieData(data) {
     console.log("clean movie got the data", data);
@@ -49,7 +50,7 @@ class SingleMovie extends Component {
       data.movie.genres === "" ? "None Listed" : data.movie.genres.join(", ");
     data.movie.average_rating = Number(data.movie.average_rating.toFixed(2));
     data.movie.runtime = data.movie.runtime === 0 ? "N/A" : data.movie.runtime;
-    return data
+    return data;
   }
 
   throwError = (error) => {
@@ -63,38 +64,47 @@ class SingleMovie extends Component {
 
   render() {
     return (
-      <div
-        className="single-movie"
-        style={{
-          backgroundImage: `url(${this.state.selectedMovie.backdrop_path})`,
-        }}
-      >
-        <div className="movie-trailer">
-          <iframe
-            width="100%"
-            height="100%"
-            src={`https://www.youtube.com/embed/${this.state.video.key}`}
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen="allowfullscreen"
-          ></iframe>
-        </div>
-        <section className="movie-details">
-          <h1>{this.state.selectedMovie.title}</h1>
-          <p>Released: {this.state.selectedMovie.release_date}</p>
-          <p className="movie-description">
-            {this.state.selectedMovie.overview}
-          </p>
-          <p>{this.state.selectedMovie.genres}</p>
-          <p>{this.state.selectedMovie.runtime} minutes</p>
-          <TomateMeter rating={this.state.selectedMovie.average_rating} />
-          <div className="button-box">
-            <Link to="/">
-              <button>BACK</button>
-            </Link>
+      <div>
+        {this.state.hasError && (
+          <ErrorModal
+            error={this.state.error}
+            closeModalButton={this.closeModalButton}
+          />
+        )}
+
+        <div
+          className="single-movie"
+          style={{
+            backgroundImage: `url(${this.state.selectedMovie.backdrop_path})`,
+          }}
+        >
+          <div className="movie-trailer">
+            <iframe
+              width="100%"
+              height="100%"
+              src={`https://www.youtube.com/embed/${this.state.video.key}`}
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen="allowfullscreen"
+            ></iframe>
           </div>
-        </section>
+          <section className="movie-details">
+            <h1>{this.state.selectedMovie.title}</h1>
+            <p>Released: {this.state.selectedMovie.release_date}</p>
+            <p className="movie-description">
+              {this.state.selectedMovie.overview}
+            </p>
+            <p>{this.state.selectedMovie.genres}</p>
+            <p>{this.state.selectedMovie.runtime} minutes</p>
+            <TomateMeter rating={this.state.selectedMovie.average_rating} />
+            <div className="button-box">
+              <Link to="/">
+                <button>BACK</button>
+              </Link>
+            </div>
+          </section>
+        </div>
       </div>
     );
   }

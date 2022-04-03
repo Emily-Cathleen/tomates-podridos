@@ -8,11 +8,11 @@ import wow from "../../images/tomate-wow.png"
 
 const TomateMeter = ({rating}) => {
   const roundRating = (rating) => {
-return rating ? rating.toFixed(2) : null
+return rating ? rating.toFixed(2) : "None"
   }
   const tomate = (rating) => {
     if (!rating) {
-      return null
+      return nice
     }
     if (rating <= 3) {
       return rot

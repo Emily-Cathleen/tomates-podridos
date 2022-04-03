@@ -5,21 +5,21 @@ import TomateMeter from "../TomateMeter/TomateMeter";
 import { getData } from "../../apiCalls";
 
 class SingleMovie extends Component {
-  constructor({ id }) {
+  constructor({ id, actionName }) {
     super();
     this.state = {
       id: id,
       selectedMovie: {},
       video: {},
+      error: "",
+      hasError: false,
     };
   }
 
   componentDidMount() {
     getData(this.state.id)
-      .then((data) => {
-        console.log("this is the data", data);
-        this.setState({ selectedMovie: data.movie });
-      })
+      .then((data) => this.cleanMovieData(data))
+      .then((data) => this.setState({ selectedMovie: data.movie }))
       .catch((error) =>
         this.throwError(
           "Oops! something went wrong. Please try again. If problem persists, send complaints to Robbie and Scott"
@@ -27,7 +27,6 @@ class SingleMovie extends Component {
       );
     getData(`${this.state.id}/videos`)
       .then((data) => {
-        console.log("this is the video data", data);
         this.setState({ video: data.videos[0] });
       })
       .catch((error) =>
@@ -36,6 +35,31 @@ class SingleMovie extends Component {
         )
       );
   }
+
+  cleanMovieData(data) {
+    console.log("clean movie got the data", data);
+    data.movie.backdrop_path = !data.movie.backdrop_path
+      ? null
+      : data.movie.backdrop_path;
+    data.movie.overview =
+      data.movie.overview === ""
+        ? "No overview available."
+        : data.movie.overview;
+    data.movie.genres =
+      data.movie.genres === "" ? "None Listed" : data.movie.genres.join(", ");
+    data.movie.average_rating = Number(data.movie.average_rating.toFixed(2));
+    data.movie.runtime = data.movie.runtime === 0 ? "N/A" : data.movie.runtime;
+    return data
+  }
+
+  throwError = (error) => {
+    this.setState({ error: error });
+    this.setState({ hasError: true });
+  };
+
+  closeModalButton = () => {
+    this.setState({ hasError: false });
+  };
 
   render() {
     return (

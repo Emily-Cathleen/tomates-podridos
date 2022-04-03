@@ -27,8 +27,11 @@ class App extends Component {
   throwError = (error) => {
     this.setState({ error: error})
     this.setState({ hasError: true });
-
   }
+  
+  closeModalButton = () => {
+    this.setState({ hasError: false });
+  };
 
   clickedMovie = (id) => {
     console.log("thisis the id", id)
@@ -36,9 +39,6 @@ class App extends Component {
 
 };
 
-  closeModalButton = () => {
-    this.setState({ hasError: false });
-  };
 
   render() {
     return (
@@ -51,9 +51,11 @@ class App extends Component {
             />
           {/* SingleMoviePage */}
             <Route path="/:id" render={({match}) => {
-              return <SingleMovie id={match.params.id} /> 
+              return <SingleMovie id={match.params.id} actionName={this.throwError} /> 
               }}
             />
+            {/* 404 Page */}
+            
 
           </Switch>
         {this.state.hasError && (

@@ -84,12 +84,10 @@ class SingleMovie extends Component {
           <h1>{this.state.selectedMovie.title}</h1>
           <p>Released: {this.state.selectedMovie.release_date}</p>
           <p className="movie-description">
-            {" "}
             {this.state.selectedMovie.overview}
           </p>
           <p>{this.state.selectedMovie.genres}</p>
           <p>{this.state.selectedMovie.runtime} minutes</p>
-          <p>{this.state.selectedMovie.average_rating}</p>
           <TomateMeter rating={this.state.selectedMovie.average_rating} />
           <div className="button-box">
             <Link to="/">

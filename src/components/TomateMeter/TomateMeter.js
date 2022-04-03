@@ -7,27 +7,23 @@ import cool from "../../images/tomate-cool.png"
 import wow from "../../images/tomate-wow.png"
 
 const TomateMeter = ({rating}) => {
-  const roundRating = (rating) => {
-return rating ? rating.toFixed(2) : "None"
-  }
   const tomate = (rating) => {
-    if (!rating) {
-      return nice
-    }
     if (rating <= 3) {
-      return rot
+      return [rot, "rot"]
     }
     if (rating <= 4) {
-      return meh
+      return [meh, "meh"]
     }
     if (rating <= 5) {
-      return nice
+      return [nice, "nice"]
     }
-    if (rating <= 6) {
-      return cool
+    if (rating >= 6) {
+      return [cool, "cool"]
     }
     if (rating >= 7) {
-      return wow
+      return [wow, "wow"]
+    } else {
+      return [nice, "nice"]
     }
   };
 
@@ -36,11 +32,11 @@ return rating ? rating.toFixed(2) : "None"
     <div>
     {rating && (
         <div className="tomate-meter">
-          <h3>{`Rating: ${roundRating(rating)}`}</h3>
+          <p>{`Rating: ${rating}`}</p>
           <img
             className="rating-img"
-            src={tomate(rating)}
-            alt="cartoon tomato"
+            src={tomate(rating)[0]}
+            alt={`cartoon tomato ${tomate(rating)[1]}`}
           />
         </div>
     )}

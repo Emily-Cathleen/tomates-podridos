@@ -1,6 +1,6 @@
 # 🍅 Tomates Podridos 🍅 
 
-This is a paired project using React to build an application that allows the user to view all movies, search movie by title, and filter movies based on different categories. The user is also able to click on a see more details button to view the movie's tagline, overview, rating, release date, genres, and runtime if available from the api data available.
+This is a paired project using React to build an application that allows the user to view all movies, search movie by title, and filter movies based on different categories. The user is also able to click on a see more details button to view the movie's tagline, overview, rating, release date, genres, and runtime if available from the api data.
 
 ![Gif 1]()
 

@@ -32,7 +32,7 @@ const TomateMeter = ({rating}) => {
     <div>
     {rating && (
         <div className="tomate-meter">
-          <p>{`Rating: ${rating}`}</p>
+          <p className="rating-value">{`Rating: ${rating}`}</p>
           <img
             className="rating-img"
             src={tomate(rating)[0]}

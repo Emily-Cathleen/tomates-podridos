@@ -42,7 +42,7 @@ class App extends Component {
 
   render() {
     return (
-      <main>
+      <main className="fade-in">
         <Header />
           <Switch>
           {/* HomePage */}

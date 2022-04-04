@@ -18,7 +18,7 @@ class App extends Component {
     };
   }
 
-  componentDidMount = () => {
+  componentDidMount() {
      getData("")
       .then((data) => this.setState({ movies: data.movies }))
       .catch((error) => this.throwError("Oops! something went wrong. Please try again. If problem persists, send complaints to Robbie and Scott"));

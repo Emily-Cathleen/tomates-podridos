@@ -1,10 +1,11 @@
 .single-movie {
   display: flex;
+  flex-direction: row;
   height: 80vh;
   width: 100vw;
   background-size: cover;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 .movie-details {
@@ -35,4 +36,34 @@
 
 .movie-description {
   padding: 20px 0px 20px 0px;
+}
+
+@media screen and (max-width: 700px) {
+  .single-movie {
+    height: 100vh;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .movie-description {
+    padding: 0px 20px 0px 20px;
+  }
+  .movie-trailer {
+    background-color: rgba(14, 0, 33, 0.848);
+    -webkit-backdrop-filter: blur(14px);
+    display: flex;
+    width: 93%;
+    height: 40%;
+  }
+  .movie-details {
+    display: flex;
+    flex-direction: column;
+    height: 54%;
+    width: 93%;
+    padding: 4%;
+    background-color: rgba(14, 0, 33, 0.848);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    color: white;
+    justify-content: space-between;
+  }
 }

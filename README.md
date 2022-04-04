@@ -14,8 +14,6 @@ This is a paired project using React to build an application that allows the use
 
 ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
 
-![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
-
 ![cypress](https://img.shields.io/badge/-cypress-%23E5E5E5?style=for-the-badge&logo=cypress&logoColor=058a5e)
 
 
@@ -25,19 +23,6 @@ View the spec for this project [here](https://frontend.turing.edu/projects/modul
 
 When the Rancid Tomatillos app loads, the user will see the home page with all movies displayed. Each movie card includes the movie's cover photo, title, and Rancid Tomatillo rating.
 
-## API
-
-For this project, we access data from two API's.
-
-Movie and user data is accessed via the following API, built by staff at Turing.
-
-[Movie Data API](https://rancid-tomatillos.herokuapp.com/api/v1)
-
-Our team gave ourselves the challenge to learn and implement Express to build an API that stores all user ratings. See both the API and repo below.
-
-[User Ratings API repo](https://github.com/aliroemhildt/user-ratings-api)
-
-[User Ratings API](https://user-ratings-api.herokuapp.com/api/v1/ratings)
 
 ## Install and Setup
 

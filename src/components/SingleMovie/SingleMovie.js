@@ -73,12 +73,12 @@ class SingleMovie extends Component {
         )}
 
         <div
-          className="single-movie"
+          className="single-movie fade-in"
           style={{
             backgroundImage: `url(${this.state.selectedMovie.backdrop_path})`,
           }}
         >
-          <div className="movie-trailer">
+          <div className="movie-trailer slide-in-blurred-left">
             <iframe
               width="100%"
               height="100%"
@@ -89,7 +89,12 @@ class SingleMovie extends Component {
               allowFullScreen="allowfullscreen"
             ></iframe>
           </div>
-          <section className="movie-details">
+          <section className="movie-details slide-in-blurred-right">
+            <div className="button-box">
+              <Link to="/">
+                <button>BACK</button>
+              </Link>
+            </div>
             <h1>{this.state.selectedMovie.title}</h1>
             <p>Released: {this.state.selectedMovie.release_date}</p>
             <p className="movie-description">
@@ -98,11 +103,6 @@ class SingleMovie extends Component {
             <p>{this.state.selectedMovie.genres}</p>
             <p>{this.state.selectedMovie.runtime} minutes</p>
             <TomateMeter rating={this.state.selectedMovie.average_rating} />
-            <div className="button-box">
-              <Link to="/">
-                <button>BACK</button>
-              </Link>
-            </div>
           </section>
         </div>
       </div>

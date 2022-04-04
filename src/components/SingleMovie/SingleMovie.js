@@ -92,7 +92,7 @@ class SingleMovie extends Component {
           <section className="movie-details slide-in-blurred-right">
             <div className="button-box">
               <Link to="/">
-                <button>BACK</button>
+                <button className="button-38">BACK</button>
               </Link>
             </div>
             <h1>{this.state.selectedMovie.title}</h1>

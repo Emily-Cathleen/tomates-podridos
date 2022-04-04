@@ -17,7 +17,7 @@
 
 
 .card-image {
-  width: 20vw;
+  width: 20em;
   border-radius: 1.5vh;
   overflow: hidden;
   transition: .3s;

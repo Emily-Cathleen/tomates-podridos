@@ -1,25 +1,54 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
 *, *::before, *::after {
   box-sizing: border-box;
 }
 * {
   margin: 0;
 }
-
+html, body {
+  height: 100%;
+  /* background: rgb(53,15,69); */
+  background: radial-gradient(circle, rgba(53,15,69,1) 0%, rgba(32,3,50,1) 44%, rgba(20,0,37,1) 100%);
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
 img, picture, video, canvas, svg {
   display: block;
   max-width: 100%;
 }
-
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+input, button, textarea, select {
+  font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+#root, #__next {
+  isolation: isolate;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+/* END RESET */
+
+/* MEDIA QUERIES */
+/* @media screen and (max-width: 1500px) {
+  .movies-section {
+    padding: 20px;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    background-color: rgb(14 0 33);
+  }
+
+} */

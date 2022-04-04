@@ -1,6 +1,6 @@
 # 🍅 Tomates Podridos 🍅 
 
-This is a paired project using React to build an application that allows the user to view all movies, search movie by title, and filter movies based on different categories. The user is also able to click on a see more details button to view the movie's tagline, overview, rating, release date, genres, and runtime if available from the api data.
+Looking for a great flick for your Friday night? Your in the right place! This is a paired project using React to build an application that allows the user to view all movies and select a movie of their choosing! The user is also able to click on a see more details button to view the overview, rating, release date, genres, and runtime if available from the api data.
 
 ![Gif 1]()
 
@@ -21,7 +21,7 @@ This is a paired project using React to build an application that allows the use
 
 View the spec for this project [here](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html).
 
-When the Rancid Tomatillos app loads, the user will see the home page with all movies displayed. Each movie card includes the movie's cover photo, title, and Rancid Tomatillo rating.
+When the Rancid Tomatillos app loads, the user will see the home page with all movies displayed. Each movie card includes the movie's cover photo and title.
 
 
 ## Install and Setup

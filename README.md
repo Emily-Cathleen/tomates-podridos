@@ -52,7 +52,7 @@ To run this app locally:
 7. Open a second terminal tab and run ```npm run cypress``` (while localhost:3000 is still running) to access the cypress testing for this app
    
 # Code Architecture 
-If you want to know more about our code architecture, [click here]().
+If you want to know more about our code architecture, [click here](https://gist.github.com/Emily-Cathleen/b812371146d2aac11da256a47dc2131d).
 
 # Challenges and Wins
 - We built this application in 12 days. 

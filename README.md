@@ -27,26 +27,39 @@ View the spec for this project [here](https://frontend.turing.edu/projects/modul
 
 When the Rancid Tomatillos app loads, the user will see the home page with all movies displayed. Each movie card includes the movie's cover photo, title, and Rancid Tomatillo rating.
 
-# Getting Started
-To get a local copy up and running follow these simple steps.
+## API
+
+For this project, we access data from two API's.
+
+Movie and user data is accessed via the following API, built by staff at Turing.
+
+[Movie Data API](https://rancid-tomatillos.herokuapp.com/api/v1)
+
+Our team gave ourselves the challenge to learn and implement Express to build an API that stores all user ratings. See both the API and repo below.
+
+[User Ratings API repo](https://github.com/aliroemhildt/user-ratings-api)
+
+[User Ratings API](https://user-ratings-api.herokuapp.com/api/v1/ratings)
 
 ## Install and Setup
 
 To run this app locally:
 
 1. fork this repository
-2. run ```git clone git clone git@github.com:GraceGardner/rancidtomatillos.git``` in your command line
+2. run ```git clone git clone  in your command line
 3. Run ```cd rancidtomatillos``` to navigate into the repository
 4. Run ```npm install```
 5. Run ```npm start```
-6. Visit ```http://localhost:3000/``` in your browser to view the Rancid Tomatillos app!
+6. Visit ```http://localhost:3000/``` in your browser to view the Tomates Podridos app!
 7. Open a second terminal tab and run ```npm run cypress``` (while localhost:3000 is still running) to access the cypress testing for this app
    
 # Code Architecture 
 If you want to know more about our code architecture, [click here]().
 
 # Challenges and Wins
-
+- We built this application in 12 days. 
+- 
 
 # Future Additions
 - Search Bar
+- User Login Page

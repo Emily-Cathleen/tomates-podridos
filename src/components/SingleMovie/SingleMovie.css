@@ -1,3 +1,22 @@
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 .single-movie {
   display: flex;
   flex-direction: row;
@@ -9,6 +28,7 @@
 }
 
 .movie-details {
+  
   overflow-y: scroll;
   overflow-x: hidden;
   display: flex;
@@ -17,15 +37,17 @@
   width: 30%;
   padding: 4%;
   background-color: rgba(14, 0, 33, 0.848);
-  -webkit-backdrop-filter: blur(14px);
+  /* -webkit-backdrop-filter: blur(14px); */
   backdrop-filter: blur(14px);
   color: white;
   justify-content: space-between;
 }
 
 .movie-trailer {
+  
   background-color: rgba(14, 0, 33, 0.848);
-  -webkit-backdrop-filter: blur(14px);
+  /* -webkit-backdrop-filter: blur(14px); */
+  backdrop-filter: blur(14px);
   display: flex;
   width: 60%;
   height: 76%;
@@ -59,6 +81,7 @@
   .movie-details {
     overflow-y: hidden;
     overflow-x: hidden;
+    scrollbar-color: #87ceeb #ff5621;
     display: flex;
     flex-direction: column;
     height: 54%;
@@ -71,3 +94,4 @@
     justify-content: space-between;
   }
 }
+

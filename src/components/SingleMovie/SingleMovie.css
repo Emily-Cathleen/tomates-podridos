@@ -28,7 +28,6 @@
 }
 
 .movie-details {
-  
   overflow-y: scroll;
   overflow-x: hidden;
   display: flex;
@@ -44,7 +43,6 @@
 }
 
 .movie-trailer {
-  
   background-color: rgba(14, 0, 33, 0.848);
   /* -webkit-backdrop-filter: blur(14px); */
   backdrop-filter: blur(14px);
@@ -58,8 +56,46 @@
   justify-content: flex-end;
 }
 
+/* CSS */
+.button-38 {
+  background-color: #ffffff;
+  border: 0;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  color: #111827;
+  font-weight: 600;
+  line-height: 1.25rem;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  text-decoration: none #d1d5db solid;
+  text-decoration-thickness: auto;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 2px 0 rgb(0 0 0 / 6%);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-38:hover {
+  background-color: rgb(208, 208, 208);
+}
+
+.button-38:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.button-38:focus-visible {
+  box-shadow: none;
+}
+
 .movie-description {
   padding: 20px 0px 20px 0px;
+}
+
+.rating {
+  display: flex;
+  flex-direction: row;
 }
 
 @media screen and (max-width: 700px) {
@@ -86,7 +122,7 @@
     flex-direction: column;
     height: 54%;
     width: 93%;
-    padding: 4%;
+    padding: 1% 2% 1% 2%;
     background-color: rgba(14, 0, 33, 0.848);
     -webkit-backdrop-filter: blur(14px);
     backdrop-filter: blur(14px);
@@ -94,4 +130,3 @@
     justify-content: space-between;
   }
 }
-

@@ -7,7 +7,7 @@ const ErrorModal = ({ error, closeModalButton }) => {
       <div className="modal-content" role="dialog" aria-modal="true">
         <p id="errorMessage">{error}</p>
         <button
-          onClick={() => closeModalButton()}
+          onClick={closeModalButton}
           className="close-button"
           name="close dialog"
         >

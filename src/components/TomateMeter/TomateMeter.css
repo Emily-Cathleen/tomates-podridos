@@ -1,3 +1,15 @@
 .rating-img {
-  height: 4vh;
+  height: 3vh;
+}
+.rating-value {
+  font-size: larger;
+  margin-right: 2%;
+}
+
+.tomate-meter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin: 1%;
 }

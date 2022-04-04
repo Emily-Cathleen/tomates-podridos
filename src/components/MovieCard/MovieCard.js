@@ -3,7 +3,7 @@ import "./MovieCard.css"
 
 const MovieCard = ({id, image, title, clickedMovie}) => {
   return(
-    <div className="card" id={id} onClick={() => clickedMovie(id)}>
+    <div className="card fade-in" id={id} onClick={() => clickedMovie(id)}>
       <div className="card-image">
         <img src={image} alt={title}/>
       </div>

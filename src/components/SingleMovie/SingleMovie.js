@@ -17,7 +17,7 @@ class SingleMovie extends Component {
     };
   }
 
-  componentDidMount = () => {
+  componentDidMount() {
     getData(this.state.id)
       .then((data) => this.cleanMovieData(data))
       .then((data) => this.setState({ selectedMovie: data.movie }))

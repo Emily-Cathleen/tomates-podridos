@@ -1,6 +1,6 @@
 # 🍅 Tomates Podridos 🍅 
 
-Looking for a great flick for your Friday night? Your in the right place! This is a paired project using React to build an application that allows the user to view all movies and select a movie of their choosing! The user is also able to click on a see more details button to view the overview, rating, release date, genres, and runtime if available from the api data.
+Looking for a great flick for your Friday night? Your in the right place! This is a paired project using React to build an application that allows the user to view all movies and select a movie of their choosing! 
 
 ![Gif 1]()
 
@@ -41,10 +41,13 @@ To run this app locally:
 # Code Architecture 
 If you want to know more about our code architecture, [click here](https://gist.github.com/Emily-Cathleen/b812371146d2aac11da256a47dc2131d).
 
-# Challenges and Wins
-- We built this application in 12 days. 
-- 
+# Wins & Challenges
+- We are very proud to have built this application in only 12 days. 
+- Rendering the movie trailer.
+
+- Refactoring using Router and Link.
+- Cypress testing. 
 
 # Future Additions
-- Search Bar
+- Search and filter bar
 - User Login Page

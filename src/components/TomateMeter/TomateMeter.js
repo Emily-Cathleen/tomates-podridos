@@ -17,15 +17,13 @@ const TomateMeter = ({rating}) => {
     if (rating <= 5) {
       return [nice, "nice"]
     }
-    if (rating >= 6) {
+    if (rating < 7) {
       return [cool, "cool"]
     }
-    if (rating >= 7) {
+    else {
       return [wow, "wow"]
-    } else {
-      return [nice, "nice"]
     }
-  };
+  }  
 
 
   return (

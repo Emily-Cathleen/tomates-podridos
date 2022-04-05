@@ -38,7 +38,6 @@ class SingleMovie extends Component {
   };
 
   cleanMovieData(data) {
-    console.log("clean movie got the data", data);
     data.movie.backdrop_path = !data.movie.backdrop_path
       ? null
       : data.movie.backdrop_path;

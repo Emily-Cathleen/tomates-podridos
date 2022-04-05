@@ -1,22 +1,3 @@
-::-webkit-scrollbar {
-  width: 5px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #888;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
 .single-movie {
   display: flex;
   flex-direction: row;
@@ -28,6 +9,7 @@
 }
 
 .movie-details {
+  overflow: hidden;
   overflow-y: scroll;
   overflow-x: hidden;
   display: flex;
@@ -36,19 +18,27 @@
   width: 30%;
   padding: 4%;
   background-color: rgba(14, 0, 33, 0.848);
-  /* -webkit-backdrop-filter: blur(14px); */
   backdrop-filter: blur(14px);
   color: white;
   justify-content: space-between;
 }
 
 .movie-trailer {
+  overflow: hidden;
   background-color: rgba(14, 0, 33, 0.848);
-  /* -webkit-backdrop-filter: blur(14px); */
   backdrop-filter: blur(14px);
   display: flex;
   width: 60%;
   height: 76%;
+}
+
+.movie-description {
+  padding: 20px 0px 20px 0px;
+}
+
+.rating {
+  display: flex;
+  flex-direction: row;
 }
 
 .button-box {
@@ -56,7 +46,7 @@
   justify-content: flex-end;
 }
 
-/* CSS */
+/* BUTTON */
 .button-38 {
   background-color: #ffffff;
   border: 0;
@@ -89,44 +79,26 @@
   box-shadow: none;
 }
 
-.movie-description {
-  padding: 20px 0px 20px 0px;
-}
-
-.rating {
-  display: flex;
-  flex-direction: row;
-}
-
+/* MEDIA QUERIES */
 @media screen and (max-width: 700px) {
   .single-movie {
-    height: 100vh;
-    display: flex;
     flex-direction: column-reverse;
+    height: 100vh;
   }
   .movie-description {
     padding: 0px 20px 0px 20px;
   }
   .movie-trailer {
-    background-color: rgba(14, 0, 33, 0.848);
-    -webkit-backdrop-filter: blur(14px);
     display: flex;
     width: 93%;
     height: 40%;
   }
   .movie-details {
-    overflow-y: hidden;
     overflow-x: hidden;
-    scrollbar-color: #87ceeb #ff5621;
     display: flex;
     flex-direction: column;
     height: 54%;
     width: 93%;
     padding: 1% 2% 1% 2%;
-    background-color: rgba(14, 0, 33, 0.848);
-    -webkit-backdrop-filter: blur(14px);
-    backdrop-filter: blur(14px);
-    color: white;
-    justify-content: space-between;
   }
 }

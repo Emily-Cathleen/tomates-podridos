@@ -39,18 +39,25 @@ code {
 }
 /* END RESET */
 
-/* MEDIA QUERIES */
-/* @media screen and (max-width: 1500px) {
-  .movies-section {
-    padding: 20px;
-    display: grid;
-    justify-items: center;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px;
-    background-color: rgb(14 0 33);
-  }
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 5px;
+}
 
-} */
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgb(14, 0, 33);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 
 /* ANIMATIONS */
 .fade-in {

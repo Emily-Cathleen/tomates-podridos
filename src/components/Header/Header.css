@@ -1,6 +1,6 @@
 header {
-
-  position: sticky; top: 0;
+  position: sticky;
+  top: 0;
   background-color: rgba(14, 0, 33, 0.848);
   color: white;
   height: 12vh;
@@ -14,9 +14,10 @@ header {
   padding: 15px;
 }
 
+/* MEDIA QUERIES */
 @media screen and (max-width: 700px) {
   header {
     display: flex;
     justify-content: center;
   }
-}  
+}

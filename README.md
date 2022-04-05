@@ -51,3 +51,5 @@ If you want to know more about our code architecture, [click here](https://gist.
 # Future Additions
 - Search and filter bar
 - User Login Page
+- 404 page for error handling
+- Adding "About the Authors" page in order to practice Route and Link

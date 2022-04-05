@@ -7,7 +7,6 @@ import cool from "../../images/tomate-cool.png"
 import wow from "../../images/tomate-wow.png"
 
 const TomateMeter = ({rating}) => {
-  console.log(rating)
   const tomate = (rating) => {
     if (rating <= 3) {
       return [rot, "rot"]

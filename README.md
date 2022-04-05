@@ -1,4 +1,4 @@
-# <img src="https://user-images.githubusercontent.com/35410545/161668960-9d52ba4a-f507-492c-835d-7579f438abef.png" alt="drawing" width="40"/> Tomates Podridos <img src="https://user-images.githubusercontent.com/35410545/161668960-9d52ba4a-f507-492c-835d-7579f438abef.png" alt="drawing" width="40"/> 
+<img src="https://tomates-podridos.herokuapp.com/static/media/tomates-podridos-logo.31555c04ec1d1df027d3.png" height="80"/>
 
 Looking for a great flick for your Friday night? Your in the right place! This application allows a user to scroll through a list of movies, select one, and then preview the trailer.
 

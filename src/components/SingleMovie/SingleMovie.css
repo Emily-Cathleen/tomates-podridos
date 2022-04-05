@@ -83,6 +83,7 @@
 @media screen and (max-width: 700px) {
   .single-movie {
     flex-direction: column-reverse;
+    height: 100vh;
   }
   .movie-description {
     padding: 0px 20px 0px 20px;
@@ -93,7 +94,6 @@
     height: 40%;
   }
   .movie-details {
-    overflow-y: hidden;
     overflow-x: hidden;
     display: flex;
     flex-direction: column;

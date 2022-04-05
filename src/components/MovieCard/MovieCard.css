@@ -1,10 +1,9 @@
 .card {
-  transition: .3s;
+  transition: 0.3s;
   transition-delay: 200ms;
   z-index: auto;
   cursor: pointer;
 }
-
 
 .card:hover {
   transform: scale(1.1);
@@ -15,12 +14,11 @@
   color: white;
 }
 
-
 .card-image {
   width: 20em;
-  border-radius: 1.5vh;
+  border-radius: 1vh;
   overflow: hidden;
-  transition: .3s;
+  transition: 0.3s;
   transition-delay: 200ms;
 }
 

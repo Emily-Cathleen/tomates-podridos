@@ -3,7 +3,7 @@
 Looking for a great flick for your Friday night? Your in the right place! This application allows a user to scroll through a list of movies, select one, and then preview the trailer.  
 
 ## Deployed Link
-[Tomates Podritos](https://arcane-savannah-76448.herokuapp.com/)
+[Tomates Podritos](https://tomates-podridos.herokuapp.com/)
 
 ![Gif 1]()
 

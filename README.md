@@ -1,11 +1,19 @@
 <img src="https://tomates-podridos.herokuapp.com/static/media/tomates-podridos-logo.31555c04ec1d1df027d3.png" height="80"/>
 
-Looking for a great flick for your Friday night? Your in the right place! This application allows a user to scroll through a list of movies, select one, and then preview the trailer.
+Looking for a great flick for your Friday night? *Tomates Podridos* has you covered! This totally not "Rotten Tomatoes" site will give you the lowdown on all the latest movies.
+
+## Overview
+*Tomates Podridos* was a paired project for Mod 3 at Turing School of Software and Design.
+Our objective was to build a React app in a short time and consume a movie api to create a Movie Streaming/Rating site.
+We also used Cypress to test to achieve Acceptance and End-to-End testing.
+
 
 ## Features
 - View a list of movies
 - Click on the desired movie to see details and watch a trailer (if available)
 - Click back to the homepage via back button or clicking on the logo
+- Tested with Cypress
+
 ## Deployed Link
 Go directly to the site here!
 [Tomates Podritos](https://tomates-podridos.herokuapp.com/)
@@ -63,7 +71,6 @@ If you want to know more about our code architecture, [click here](https://gist.
 ## Wins & Challenges
 - We are very proud to have built this application in only 12 days. 
 - Rendering the movie trailer.
-
 - Refactoring using Router and Link.
 - Cypress testing. 
 

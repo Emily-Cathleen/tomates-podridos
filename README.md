@@ -1,6 +1,6 @@
 # 🍅 Tomates Podridos 🍅 
 
-Looking for a great flick for your Friday night? Your in the right place! This is a paired project using React to build an application that allows the user to view all movies and select a movie of their choosing! 
+Looking for a great flick for your Friday night? Your in the right place! This application allows a user to scroll through a list of movies, select one, and then preview the trailer.  
 
 ![Gif 1]()
 

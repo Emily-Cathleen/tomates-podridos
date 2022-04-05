@@ -1,10 +1,18 @@
 describe("Tomates podridos main page", () => {
-  it("User should be able to visit the page and see title and all movies displayed", () => {
+  it("As a user, when I visit the page I should see all movies displayed", () => {
     cy.visit("http://localhost:3000");
+    cy.intercept("GET", "https://rancid-tomatillos.herokuapp.com/api/v2/movies", {
+    "id": 694919,
+    "poster_path": "https://image.tmdb.org/t/p/original//6CoRTJTmijhBLJTUNoVSUNxZMEI.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original//pq0JSpwyT2URytdFG0euztQPAyR.jpg",
+    "title": "Money Plane",
+    "average_rating": 6.875,
+    "release_date": "2020-09-29"
+});
   });
 
   //HEADER
-  it("Should have a header with Tomates Podriodos logo on it", () => {
+  it("As a user, I should see a header with the Tomates Podriodos logo on it", () => {
     cy.visit("http://localhost:3000");
     cy.get('[alt="Home button tomates podridos logo"]')
       .should("be.visible")
@@ -14,14 +22,17 @@ describe("Tomates podridos main page", () => {
   });
 
   // FOOTER
-  it("Should have a footer with Company name", () => {
+  it("As a user, I should see a footer with Company name", () => {
     cy.visit("http://localhost:3000").contains(
       "©2022 Tomates Podridos"
     );
   });
 
+  
+
+
   //ERROR MSG
-  it("Should display error message for 400 status code", () => {
+  it("As a user, if my network request fails, I should see a display error message for 400 status code", () => {
     cy.intercept("https://rancid-tomatillos.herokuapp.com/api/v2/movies", {
       statusCode: 404,
     });
@@ -30,10 +41,4 @@ describe("Tomates podridos main page", () => {
     );
   });
 
-  //SEARCH BAR
-  // it("Should contain a search bar", () => {
-  //   cy.get('form input[placeholder="Search title here"]')
-  //     get('form input[type="text"]')
-  //     get('form input[name="title"]');
-  // });
 });

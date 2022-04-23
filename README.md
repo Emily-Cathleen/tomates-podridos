@@ -1,4 +1,4 @@
-<img src="https://tomates-podridos.herokuapp.com/static/media/tomates-podridos-logo.31555c04ec1d1df027d3.png" height="80"/>
+<img src="https://user-images.githubusercontent.com/35410545/164326412-f5b1e646-d050-4a9e-9fda-eda65b8b1608.png" height="80"/>
 
 Looking for a great flick for your Friday night? *Tomates Podridos* has you covered! This totally not "Rotten Tomatoes" site will give you the lowdown on all the latest movies.
 

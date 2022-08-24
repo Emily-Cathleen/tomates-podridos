@@ -16,7 +16,7 @@ We also used Cypress to test to achieve Acceptance and End-to-End testing.
 
 ## Deployed Link
 Go directly to the site here!
-[Tomates Podritos](https://tomates-podridos.herokuapp.com/)
+[Tomates Podritos](https://tomates-podridos.surge.sh/)
 
 ## Install and Setup
 
